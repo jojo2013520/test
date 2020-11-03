@@ -1,1 +1,5 @@
 new test
+
+新创建的分支 只有  git push --set-upstream origin newtest（分支名）
+
+推上远端 远端才会出现这个分支
