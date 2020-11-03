@@ -1,0 +1,43 @@
+1.在当前分支 develop分支  copy一份出来开发 test
+
+git checkout -b test
+
+更改之后
+
+git add .
+
+git commit -m 'xxx'
+
+git push --set-upstream origin test
+
+切换到 develop 分支
+
+git checkout develop
+
+git merge test
+
+合并 test 分支的修改
+
+git push 
+
+将test分支的修改推送到 develop 分支
+
+也可以用 git cherry-pick 代替 merge 操作
+
+
+2. 
+
+我们有时会遇到这样的情况，正在dev分支开发新功能，做到一半时有人过来反馈一个bug，让马上解决，但是新功能做到了一半你又不想提交，这时就可以使用git stash命令先把当前进度保存起来，然后切换到另一个分支去修改bug，修改完提交后，再切回dev分支，使用git stash pop来恢复之前的进度继续开发新功能。下面来看一下git stash命令的常见用法
+
+当前test 分支 不想提交 可以先提交到暂存区保存
+
+git add .   //把当前文件添加到暂存区
+
+git stash 把当前进度保存起来
+
+git checkout develop  切换到别的分支修改内容
+
+修改完成之后  git checkout test 切换到现有分支
+
+git stash pop  把暂存区的东西拿出来  继续工作
+
